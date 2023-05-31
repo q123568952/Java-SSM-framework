@@ -8,8 +8,8 @@
   <!-- add spring-context 5.2.10.RELEASE -->
 
   <!-- add bean -->
-  <bean id="bookDao" name="service service2 " class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl"/>
-  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">
+  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl"/>
+  <bean id="bookService" name="service service2 "class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">
   <!-- property is for setup the bean property
        name is to define the parameter in serviceimpl
        ref need to chosoe the parmeter in appicationContext-->

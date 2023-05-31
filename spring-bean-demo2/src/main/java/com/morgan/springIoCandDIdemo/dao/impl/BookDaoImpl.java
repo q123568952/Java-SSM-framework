@@ -4,7 +4,7 @@ import com.morgan.springIoCandDIdemo.dao.BookDao;
 
 public class BookDaoImpl implements BookDao{
 
-    public BookDaoImpl(){
+    private BookDaoImpl(){
         System.out.println("book dao constructor is running ...");
     }
     

@@ -1,6 +1,6 @@
 package com.morgan.springIoCandDIdemo.service.impl;
 
-import com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl;
+
 import com.morgan.springIoCandDIdemo.service.BookService;
 import com.morgan.springIoCandDIdemo.dao.BookDao;
 

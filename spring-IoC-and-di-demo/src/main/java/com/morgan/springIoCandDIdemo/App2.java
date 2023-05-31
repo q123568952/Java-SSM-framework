@@ -2,7 +2,6 @@ package com.morgan.springIoCandDIdemo;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.morgan.springIoCandDIdemo.dao.BookDao;
 import com.morgan.springIoCandDIdemo.service.BookService;
 
 public class App2 {

@@ -1,4 +1,4 @@
-package com.morgan.spring.IoC.and.di.demo;
+package com.morgan.springIoCandDIdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

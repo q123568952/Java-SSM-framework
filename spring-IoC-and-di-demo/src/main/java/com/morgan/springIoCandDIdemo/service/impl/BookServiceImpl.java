@@ -6,11 +6,15 @@ import com.morgan.springIoCandDIdemo.dao.BookDao;
 
 public class BookServiceImpl implements BookService{
 
-    private BookDao BookDao = new BookDaoImpl();
+    private BookDao BookDao;
 
     public void save(){
         System.out.println("book service save ...");
         BookDao.save();
+    }
+
+    public void setBookDao(BookDao bookDao) {
+        BookDao = bookDao;
     }
     
 }

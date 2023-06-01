@@ -1,6 +1,8 @@
 package com.morgan.springIoCandDIdemo;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.morgan.springIoCandDIdemo.dao.UserDao;
-import com.morgan.springIoCandDIdemo.factory.UserDaoFactory;
 
 public class AppUser {
 
@@ -8,14 +10,13 @@ public class AppUser {
 		// get bean
 		// OrderDao orderDao = OrderDaoFactory.getOrderDao();
 		// orderDao.save();
-	UserDaoFactory userDaoFactory = new UserDaoFactory();
-	UserDao userDao = userDaoFactory.getUserDao();
-	userDao.save();
-		// ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-		// // BookDao bookDao = (BookDao)ctx.getBean("bookDao");
-		// // bookDao.save();
-		// OrderDao orderDao = (OrderDao)ctx.getBean("OrderDao");
-		// orderDao.save();
+	// UserDaoFactory userDaoFactory = new UserDaoFactory();
+	// UserDao userDao = userDaoFactory.getUserDao();
+	// userDao.save();
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		UserDao userDao = (UserDao)ctx.getBean("userDao");
+		userDao.save();
+		
 	}
 
 }

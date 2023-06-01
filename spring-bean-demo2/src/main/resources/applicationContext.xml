@@ -13,6 +13,8 @@
   <!-- method 2 add singleton factory bean -->
   <!-- <bean id="OrderDao" class="com.morgan.springIoCandDIdemo.factory.OrderDaoFactory" factory-method="getOrderDao"/> -->
   <!-- method 3 add instance factory bean-->
-  <bean id="userFactory" class="com.morgan.springIoCandDIdemo.factory.UserDaoFactory"/>
-  <bean id="userDao" factory-method="getUserDao" factory-bean="userFactory"/>
+  <!-- <bean id="userFactory" class="com.morgan.springIoCandDIdemo.factory.UserDaoFactory"/>
+  <bean id="userDao" factory-method="getUserDao" factory-bean="userFactory"/> -->
+  <!-- method 4 create UserDaofactorybean to generate bean  -->
+  <bean id="userDao" class="com.morgan.springIoCandDIdemo.factory.UserDaoFactoryBean"/>
 </beans>

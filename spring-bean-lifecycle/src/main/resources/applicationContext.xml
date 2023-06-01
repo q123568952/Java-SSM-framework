@@ -8,7 +8,7 @@
   <!-- add spring-context 5.2.10.RELEASE -->
 
   <!-- add bean -->
-  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl"/>
+  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl" init-method="init" destroy-method="destroy"/>
   <bean id="bookService" name="service2" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">
   <!-- property is for setup the bean property
        name is to define the parameter in serviceimpl

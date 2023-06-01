@@ -1,8 +1,9 @@
 package com.morgan.springIoCandDIdemo.dao.impl;
 
-import com.morgan.springIoCandDIdemo.dao.OrderDao;
 
-public class OrderDaoImpl implements OrderDao{
+import com.morgan.springIoCandDIdemo.dao.UserDao;
+
+public class UserDaoImpl implements UserDao{
 
     
     

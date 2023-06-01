@@ -9,11 +9,13 @@ public class Appd202 {
 	public static void main(String[] args) {
 		// get bean
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		ctx.registerShutdownHook();
 		// BookDao bookDao = (BookDao)ctx.getBean("bookDao");
 		// bookDao.save();
 		BookService bookService = (BookService)ctx.getBean("service2");
 		bookService.save();
-		ctx.close();
+		
+		// ctx.close();
 	}
 
 }

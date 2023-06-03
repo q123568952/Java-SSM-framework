@@ -17,7 +17,6 @@ public class BookServiceImpl implements BookService{
 
     
     public void setBookDao(BookDao bookDao) {
-        System.out.println("set bookdao ...");
         this.bookDao = bookDao;
     }
 

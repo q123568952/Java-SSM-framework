@@ -7,5 +7,47 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
   <!-- add spring-context 5.2.10.RELEASE -->
 
-  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl"/>
+  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
+  <property name="array">
+    <array>
+      <value>100</value>
+      <value>200</value>
+      <value>300</value>
+      <value>400</value>
+      <value>500</value>
+    </array>
+  </property>
+  <property name="list">
+    <list>
+      <value>L1</value>
+      <value>L2</value>
+      <value>L3</value>
+      <value>L4</value>
+      <value>L5</value>
+    </list>
+  </property>
+  <property name="set">
+    <set>
+      <value>s1</value>
+      <value>s1</value>
+      <value>s3</value>
+      <value>s3</value>
+      <value>s5</value>
+    </set>
+  </property>
+  <property name="map">
+    <map>
+      <entry key="m1" value="001"/>
+      <entry key="m2" value="002"/>
+      <entry key="m3" value="003"/>
+    </map>
+  </property>
+<property name="properties">
+  <props>
+      <prop key="p1">001</prop>
+      <prop key="p2">002</prop>
+      <prop key="p3">003</prop>
+    </props>
+</property>
+  </bean>
 </beans>

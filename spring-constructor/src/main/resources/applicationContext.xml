@@ -9,11 +9,15 @@
 
   <!-- add bean -->
   <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
+  <constructor-arg name="databaseName" value="mysql"/>
+  <constructor-arg name="connectionNum" value="1000"/>
   </bean>
+  <bean id="userDao" class="com.morgan.springIoCandDIdemo.dao.impl.UserDaoImpl"/>
   <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">
 <!-- property is for setup the bean property
        name is to define the parameter in serviceimpl
        ref need to chosoe the parmeter in appicationContext-->
-  <property name="bookDao" ref="bookDao"></property>
+  <constructor-arg name="bookDao" ref="bookDao"/>
+  <constructor-arg name="userDao" ref="userDao"/>
   </bean>
 </beans>

@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.morgan.springIoCandDIdemo.service.BookService;
 
-public class AppForDISet {
+public class AppForDIConstructor {
 
 	public static void main(String[] args) {
 		// get bean

@@ -7,16 +7,28 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
   <!-- add spring-context 5.2.10.RELEASE -->
 
+
+<!-- Standard way -->
   <!-- add bean -->
-  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
+  <!-- <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
   <constructor-arg name="databaseName" value="mysql"/>
   <constructor-arg name="connectionNum" value="1000"/>
   </bean>
   <bean id="userDao" class="com.morgan.springIoCandDIdemo.dao.impl.UserDaoImpl"/>
-  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">
-<!-- property is for setup the bean property
+  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl"> -->
+   <!-- property is for setup the bean property
        name is to define the parameter in serviceimpl
-       ref need to chosoe the parmeter in appicationContext-->
+       ref need to chosoe the parmeter in appicationContext -->
+  <!-- <constructor-arg name="bookDao" ref="bookDao"/>
+  <constructor-arg name="userDao" ref="userDao"/>  -->
+
+<!--convience way -->
+  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
+  <constructor-arg type="String" value="500"/>
+  <constructor-arg type="int" value="1000"/>
+  </bean>
+  <bean id="userDao" class="com.morgan.springIoCandDIdemo.dao.impl.UserDaoImpl"/>
+  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">
   <constructor-arg name="bookDao" ref="bookDao"/>
   <constructor-arg name="userDao" ref="userDao"/>
   </bean>

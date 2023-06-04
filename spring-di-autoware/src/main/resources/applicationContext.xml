@@ -9,5 +9,5 @@
 
   <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
   </bean>
-  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl" autowire="byType"/>
+  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl" autowire="byName"/>
 </beans>

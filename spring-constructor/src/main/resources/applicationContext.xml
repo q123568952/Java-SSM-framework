@@ -22,10 +22,19 @@
   <!-- <constructor-arg name="bookDao" ref="bookDao"/>
   <constructor-arg name="userDao" ref="userDao"/>  -->
 
-<!--convience way -->
-  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
-  <constructor-arg type="String" value="500"/>
+<!--convience way to decoupling parameters-->
+  <!-- <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
+  <constructor-arg type="String" value="mysql"/>
   <constructor-arg type="int" value="1000"/>
+  </bean>
+  <bean id="userDao" class="com.morgan.springIoCandDIdemo.dao.impl.UserDaoImpl"/>
+  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">
+  <constructor-arg name="bookDao" ref="bookDao"/>
+  <constructor-arg name="userDao" ref="userDao"/> -->
+<!--  -->
+  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl">
+  <constructor-arg index="1" value="mysql"/>
+  <constructor-arg index="0" value="1000"/>
   </bean>
   <bean id="userDao" class="com.morgan.springIoCandDIdemo.dao.impl.UserDaoImpl"/>
   <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl">

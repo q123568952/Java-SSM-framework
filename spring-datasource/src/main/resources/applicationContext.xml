@@ -7,6 +7,4 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
   <!-- add spring-context 5.2.10.RELEASE -->
 
-  <bean id="bookDao"  class="com.morgan.springIoCandDIdemo.dao.impl.BookDaoImpl"/>
-  <bean id="bookService" class="com.morgan.springIoCandDIdemo.service.impl.BookServiceImpl" autowire="byName"/>
 </beans>

@@ -11,14 +11,14 @@ import org.springframework.stereotype.Repository;
 import com.morgan.springIoCandDIdemo.dao.BookDao;
 
 
-@Repository("bookDao1")
-public class BookDaoImpl implements BookDao{
+@Repository("bookDao2")
+public class BookDaoImpl2 implements BookDao{
 
     @Value("${name}")
     private String name;
 
     public void save(){
-        System.out.println("book dao save ..." + name);
+        System.out.println("book dao save ...2..." + name);
     }
    
 

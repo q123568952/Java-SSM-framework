@@ -12,6 +12,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
 @Import(JdbcConfig.class)
+@ComponentScan("com.morgan..springIoCandDIdemo.dao")
 public class SpringConfig {
 
    

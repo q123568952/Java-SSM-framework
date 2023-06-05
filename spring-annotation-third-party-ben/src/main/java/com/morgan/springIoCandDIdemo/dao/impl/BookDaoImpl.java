@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.morgan.springIoCandDIdemo.dao.BookDao;
 
 
-@Repository("bookDao1")
+@Repository("bookDao")
 public class BookDaoImpl implements BookDao{
 
     @Value("${name}")

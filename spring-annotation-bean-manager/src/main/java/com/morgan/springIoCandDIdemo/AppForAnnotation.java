@@ -15,11 +15,13 @@ public class AppForAnnotation {
 
 	public static void main(String[] args) {
 
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
 		BookDao bookDao1 = ctx.getBean(BookDao.class);
 		BookDao bookDao2 = ctx.getBean(BookDao.class);
 		System.out.println(bookDao1);
 		System.out.println(bookDao2);
+		ctx.close();
+
 	}
 
 }

@@ -13,9 +13,11 @@ public class App {
 
 	public static void main(String[] args) {
 		// get bean
-		// ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-		ApplicationContext ctx = new FileSystemXmlApplicationContext("D:/springlearning/Java-SSM-framework/spring-container/src/main/resources/applicationContext.xml");
-		BookDao bookDao =(BookDao) ctx.getBean("bookDao");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		// ApplicationContext ctx = new FileSystemXmlApplicationContext("D:/springlearning/Java-SSM-framework/spring-container/src/main/resources/applicationContext.xml");
+		// BookDao bookDao =(BookDao) ctx.getBean("bookDao");
+		// BookDao bookDao = ctx.getBean("bookDao", BookDao.class);
+		BookDao bookDao = ctx.getBean(BookDao.class);
 		bookDao.save();
 
 	}

@@ -2,7 +2,7 @@ package com.morgan.springIoCandDIdemo.service;
 
 import java.util.List;
 
-import com.morgan.springIoCandDIdemo.demain.Account;
+import com.morgan.springIoCandDIdemo.domain.Account;
 
 public interface AccountService {
 

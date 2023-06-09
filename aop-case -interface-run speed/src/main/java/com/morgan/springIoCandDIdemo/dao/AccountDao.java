@@ -7,22 +7,22 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.morgan.springIoCandDIdemo.demain.Account;
+import com.morgan.springIoCandDIdemo.domain.Account;
 
 public interface AccountDao {
 
-    @Insert("insert into tb1_account(name,money) value (#{name},#{money})")
+    @Insert("insert into account(name,money) value (#{name},#{money})")
     void save(Account account);
 
-    @Update("update tb1_account set name = #{name}, #{money} where id = #{id}")
+    @Update("update account set name = #{name}, #{money} where id = #{id}")
     void update(Account account);
 
-    @Delete("delete from tb1_account where id = #{id}")
+    @Delete("delete from account where id = #{id}")
     void delete(Integer id);
 
-    @Select("select *from tb1_account where id = #{id}")
+    @Select("select *from account where id = #{id}")
     Account findById(Integer id);
     
-    @Select("select *from tb1_account")
+    @Select("select *from account")
     List<Account> findAll();
 }

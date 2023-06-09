@@ -1,4 +1,4 @@
-package com.morgan.springIoCandDIdemo.demain;
+package com.morgan.springIoCandDIdemo.domain;
 
 import java.io.Serializable;
 
@@ -23,6 +23,10 @@ public class Account implements Serializable{
     }
     public void setMoney(double money) {
         this.money = money;
+    }
+    @Override
+    public String toString() {
+        return "Account [id=" + id + ", name=" + name + ", money=" + money + "]";
     } 
     
 }

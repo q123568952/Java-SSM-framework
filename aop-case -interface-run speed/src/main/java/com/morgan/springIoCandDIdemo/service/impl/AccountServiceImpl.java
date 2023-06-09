@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.morgan.springIoCandDIdemo.dao.AccountDao;
-import com.morgan.springIoCandDIdemo.demain.Account;
+import com.morgan.springIoCandDIdemo.domain.Account;
 import com.morgan.springIoCandDIdemo.service.AccountService;
 
 @Service

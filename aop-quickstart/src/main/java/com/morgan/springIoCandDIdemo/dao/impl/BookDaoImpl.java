@@ -1,10 +1,6 @@
 package com.morgan.springIoCandDIdemo.dao.impl;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.morgan.springIoCandDIdemo.dao.BookDao;
@@ -14,11 +10,14 @@ import com.morgan.springIoCandDIdemo.dao.BookDao;
 public class BookDaoImpl implements BookDao{
 
 
-    public void save(){
-        System.out.println(System.currentTimeMillis());
-        System.out.println("book dao save ...");
+    public void update(){
+       
+        System.out.println("book dao update ...");
     }
-     public void update(){System.out.println("book dao update ...");}
+     public int select(){
+        System.out.println("book dao select ...");
+        return 100;
+    }
      
    
 }

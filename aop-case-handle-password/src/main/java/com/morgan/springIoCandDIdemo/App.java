@@ -16,7 +16,7 @@ public class App {
 
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
 		ResourceService resourceService = ctx.getBean(ResourceService.class);
-		boolean flag = resourceService.openURL("http://test.tteesstt.com/hihi", "root");
+		boolean flag = resourceService.openURL("http://test.tteesstt.com/hihi   ", " root ");
 		System.out.println(flag);
 		
 

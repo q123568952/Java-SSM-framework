@@ -5,19 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
 
-    @RequestMapping("/save")
+    @RequestMapping("/commonParam")
     @ResponseBody
-    public String save(){
-        System.out.println("user save ...");
-        return "{'module':'user save'}";
+    public String commonParam(String name, int age){
+        System.out.println("普通參數傳遞"+ name + "-----"+age);
+        return "{'module':'common Param'}";
     }
-     @RequestMapping("/delete")
-    @ResponseBody
-    public String delete(){
-        System.out.println("user delete ...");
-        return "{'module':'user delete'}";
-    }
+
 }

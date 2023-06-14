@@ -5,6 +5,13 @@ public class User {
     private int id;
     private String name;
     private int age;
+    private Address address;
+    public Address getAddress() {
+        return address;
+    }
+    public void setAddress(Address address) {
+        this.address = address;
+    }
     public int getId() {
         return id;
     }
@@ -23,4 +30,9 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", name=" + name + ", age=" + age + ", address=" + address + "]";
+    }
+ 
 }

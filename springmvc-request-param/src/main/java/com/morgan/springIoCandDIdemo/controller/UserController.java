@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -53,5 +54,26 @@ public class UserController {
     public String listParam(@RequestParam List<String> likes){
         System.out.println("普通參數傳遞"+ likes );
         return "{'module':'list Param'}";
+    }
+
+     @RequestMapping("/listParamForJson")
+    @ResponseBody
+    public String listParamForJson(@RequestBody List<String> likes){
+        System.out.println("普通參數傳遞"+ likes );
+        return "{'module':'list Json Param'}";
+    }
+
+    @RequestMapping("/pojoParamForJson")
+    @ResponseBody
+    public String pojoParamForJson(@RequestBody User user){
+        System.out.println("普通參數傳遞"+ user );
+        return "{'module':'pojo Json Param'}";
+    }
+
+    @RequestMapping("/listpojoParamForJson")
+    @ResponseBody
+    public String listpojoParamForJson(@RequestBody List<User> users){
+        System.out.println("普通參數傳遞"+ users );
+        return "{'module':'list pojo Json Param'}";
     }
 }

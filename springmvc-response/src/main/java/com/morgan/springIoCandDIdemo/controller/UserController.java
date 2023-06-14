@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
 
     @RequestMapping("/toJumpPage")
-    @ResponseBody
     public String toJumpPage(){
         System.out.println("跳頁面囉");
         return "page.jsp";
     }
-
+    @RequestMapping("/toText")
+    @ResponseBody
+    public String toText(){
+        System.out.println("返回文本數據");
+        return "response text";
+    }
 }

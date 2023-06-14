@@ -1,3 +1,8 @@
-d:\springlearning\Java-SSM-framework\springmvc-bean-load\src\main\java\com\morgan\springIoCandDIdemo\config\ServletContainerInitConfig.java
-d:\springlearning\Java-SSM-framework\springmvc-bean-load\src\main\java\com\morgan\springIoCandDIdemo\config\SpringMvcConfig.java
-d:\springlearning\Java-SSM-framework\springmvc-bean-load\src\main\java\com\morgan\springIoCandDIdemo\controller\UserController.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\config\SpringMvcConfig.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\config\ServletContainerInitConfig.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\controller\UserController.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\service\UserService.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\controller\BookController.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\service\impl\UserServiceImpl.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\dao\UserDao.java
+d:\springlearning\Java-SSM-framework\springmvc-request-mapping\src\main\java\com\morgan\springIoCandDIdemo\domain\User.java

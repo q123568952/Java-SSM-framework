@@ -1,8 +1,10 @@
 package com.morgan.springIoCandDIdemo.controller;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -75,5 +77,12 @@ public class UserController {
     public String listpojoParamForJson(@RequestBody List<User> users){
         System.out.println("普通參數傳遞"+ users );
         return "{'module':'list pojo Json Param'}";
+    }
+
+    @RequestMapping("/dataParam")
+    @ResponseBody
+    public String dataParam(@DateTimeFormat(pattern = "yyyy-MM-DD")Date date){
+        System.out.println("普通參數傳遞"+ date );
+        return "{'module':'data Param'}";
     }
 }

@@ -24,8 +24,8 @@ import com.morgan.springIoCandDIdemo.domain.User;
 public class UserController {
 
     @PostMapping
-    public String save (){
-        System.out.println("user save ...");
+    public String save (@RequestBody User user){
+        System.out.println("user save ..."+user);
         return "{'module':'user save success'}";
     }
 

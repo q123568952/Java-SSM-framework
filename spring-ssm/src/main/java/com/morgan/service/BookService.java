@@ -1,5 +1,18 @@
 package com.morgan.service;
 
+import java.util.List;
+
+import com.morgan.domain.Book;
+
 public interface BookService {
-    
+
+    public boolean save(Book book);
+
+    public boolean update(Book book);
+
+    public boolean delete(Integer id);    
+
+    public Book getById(Integer id);
+
+    public List<Book> getAll();
 }

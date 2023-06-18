@@ -2,8 +2,11 @@ package com.morgan.service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.morgan.domain.Book;
 
+@Transactional
 public interface BookService {
 
     public boolean save(Book book);

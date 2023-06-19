@@ -24,33 +24,38 @@ public class BookController {
     private BookService bookService;
 
     @PostMapping
-    public boolean save(@RequestBody Book book) {
-        bookService.save(book);
-        return true;
+    public Result save(@RequestBody Book book) {
+       boolean flag =  bookService.save(book);
+        return new Result(flag ? Code.SAVE_OK: Code.SAVE_ERR,flag);
         }
 
     @PutMapping
-    public boolean update(@RequestBody Book book) {
-        bookService.update(book);
-        return true;    
+    public Result update(@RequestBody Book book) {
+        boolean flag = bookService.update(book);
+        return new Result(flag ? Code.UPDATE_OK: Code.UPDATE_ERR,flag);  
     }
 
     @DeleteMapping("/{id}")
-    public boolean delete(@PathVariable Integer id) {
-       bookService.delete(id); 
-       return true;
+    public Result delete(@PathVariable Integer id) {
+       boolean flag = bookService.delete(id); 
+       return new Result(flag ? Code.DELETE_OK: Code.DELETE_ERR,flag);
     }
 
     @GetMapping("/{id}")
-    public Book getById(@PathVariable Integer id) {
-       bookService.getById(id);
-        return bookService.getById(id);
+    public Result getById(@PathVariable Integer id) {
+       Book book = bookService.getById(id);
+       Integer code = book != null ? Code.GET_OK: Code.GET_ERR;
+       String msg = book != null ? "":"數據查詢失敗請重試";
+       return new Result(code, book, msg);
 
     }
 
     @GetMapping
-    public List<Book> getAll() {
-    return bookService.getAll(); 
+    public Result getAll() {
+       List<Book> books = bookService.getAll();
+       Integer code = books != null ? Code.GET_OK: Code.GET_ERR;
+       String msg = books != null ? "":"數據查詢失敗請重試";
+       return new Result(code, books, msg);
     }
     
 }

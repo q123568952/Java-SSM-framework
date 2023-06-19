@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- page meta -->
+        <meta charset ="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Spring MVC Case study</title>
+        <meta content="with=device-with, initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+
+        <link rel="stylesheet" href="../plugins/elementui/index.css">
+        <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body class="hold-transition">
+        <div id="app">
+            <div class="content-header">
+                <h1>圖書管理</h1>
+            </div>
+            <div class="app-container">
+                <div class="box">
+                    <div class="filter-container">
+                        
+                        <el-input placeholder="圖書名稱" v-model="pagination.queryString" style="display: inline-block;" class="filter-item"></el-input>
+                        <el-button @click="getAll()" class="default">查詢</el-button>
+                        <el-button type="primary" class="butT" @click="handleCreate()">新建</el-button>
+                    </div>
+                     <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
+                        <el-table-column type="index" align="center" label="序號"></el-table-column>
+                        <el-table-column prop="type" align="center" label="圖書類別"></el-table-column>
+                        <el-table-column prop="name" align="center" label="圖書名稱"></el-table-column>
+                        <el-table-column prop="description" align="center" label="描述"></el-table-column>
+                        <el-table-column label="操作" align="center">
+                            <template slot-scope="scope">
+                                <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">編輯</el-button>
+                                <el-button type="danger" size="mini" @click="handleDelete(scope.row)">編輯</el-button>
+                            </template>
+                        </el-table-column>
+                     </el-table>
+                    <div class="add-form">
+                        <el-dialog title="新增圖書" :visible.sync="dialogFormVisible">
+                            <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right" label-width="100">
+                                <el-row>
+                                    <el-col :span="12">
+                                        <el-form-item label="圖書類別" prop="type">
+                                            <el-input v-model="formData.type"/>
+                                        </el-form-item>
+                                    </el-col>
+                                     <el-col :span="12">
+                                        <el-form-item label="圖書名稱" prop="name">
+                                            <el-input v-model="formData.name"/>
+                                        </el-form-item>
+                                    </el-col>
+                                </el-row>
+                                <el-row>
+                                    <el-col :span="24">
+                                        <el-form-item label="描述">
+                                            <el-input v-model=""formData.description type="textarea"></el-input>
+                                        </el-form-item>
+                                    </el-col>
+                                </el-row>
+                            </el-form>
+                            <div slot="footer" class="dialog-footer">
+                                <el-button @click="dialogFormVisible = false">取消</el-button>
+                                <el-button type="primary" @click="handleAdd()">確定</el-button>
+                            </div>
+                        </el-dialog>
+                    </div>
+                    <div class="add-form">
+                        <el-dialog title="編輯檢查項" :visible.sync="dialogFormVisible4Edit">
+                            <el-form ref="dataEditForm" :model="formData" :rules="rules" label-position="right" label-width="1">
+                                <el-row>
+                                    <el-col :span="12">
+                                        <el-form-item label="圖書類別" prop="type">
+                                            <el-input v-model="formData.type"/>
+                                        </el-form-item>
+                                    </el-col>
+                                    <el-col :span="12">
+                                        <el-form-item label="圖書名稱" prop="name">
+                                            <el-input v-model="formData.name"/>
+                                        </el-form-item>
+                                    </el-col>
+                                </el-row>
+                                <el-row>
+                                    <el-col :span="24">
+                                        <el-form-item label="描述">
+                                            <el-input v-model="formData.description" type="textarea"></el-input>
+                                        </el-form-item>
+                                    </el-col>
+                                </el-row>
+                            </el-form>
+                            <div slot="footer" class="dialog-footer">
+                                <el-button @click="dialogFormVisible4Edit = false">取消</el-button>
+                                <el-button type="primary" @click="handleAdd()">確定</el-button>
+                            </div>
+                        </el-dialog>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../js/vue.js"></script>
+    <script src="../plugins/elementui/index.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/axios.js"></script>
+    <script>
+        var vue = new vue({
+            el: '#app',
+            data:{
+                pagination: {},
+                dataList: [],
+                formData: {},
+                dialogFormVisible: false,
+                dialogFormVisible4Edit: false,
+                rules: {
+                    type: [{required: true, message: '圖書類別為必填項目', trigger: 'blur'}],
+                    name: [{required: true, message: '圖書名稱為必填項目', trigger: 'blur'}]
+                }
+            },
+            created(){
+                this.getAll();
+            },
+            methods:{
+                getAll(){     
+                    axios.get("/books").then((res)=>{
+                        this.dataList = res.data.data;
+                    });               
+                },
+                handleCreate(){
+                },
+                restForm(){
+                },
+                handleAdd(){
+                },
+                handleUpdate(row){
+                },
+                handleEdit(){
+                }
+            }
+
+        })
+    </script>
+</html>

@@ -1,5 +1,6 @@
 package com.morgan.config;
 
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -12,8 +13,7 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport{
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
         registry.addResourceHandler("/plugins/**").addResourceLocations("/plugins/");
 
+            
     }
-
-    
     
 }

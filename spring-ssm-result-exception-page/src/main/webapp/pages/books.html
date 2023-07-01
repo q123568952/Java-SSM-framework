@@ -122,15 +122,21 @@
         },
         methods: {
             getAll() {
-                axios.get("/books").then((res) => {
+                axios.get("http://localhost/books").then((res) => {
                     this.dataList = res.data.data;
                 });
             },
             handleCreate() {
+                this.dialogFormVisible=true;
+                
             },
             restForm() {
             },
             handleAdd() {
+                axios.post("http://localhost/books",this.formData).then((res)=>{
+                    this.dialogFormVisible=false;
+                    this.getAll();
+                });
             },
             handleUpdate(row) {
             },

@@ -91,7 +91,7 @@
                         </el-form>
                         <div slot="footer" class="dialog-footer">
                             <el-button @click="dialogFormVisible4Edit = false">取消</el-button>
-                            <el-button type="primary" @click="handleAdd()">確定</el-button>
+                            <el-button type="primary" @click="handleEdit()">確定</el-button>
                         </div>
                     </el-dialog>
                 </div>
@@ -147,10 +147,40 @@
                     }).finally(()=>{ this.getAll()});
             },
             handleUpdate(row) {
+               axios.get("http://localhost/books/"+row.id).then((res)=>{
+                if(res.data.code == 20041){
+                    this.formData = res.data.data;
+                    this.dialogFormVisible4Edit=true;
+                } else {
+                    this.$message.error(res.data.msg);
+                }
+               });
                
             },
             handleEdit() {
-               
+                axios.put("http://localhost/books",this.formData).then((res)=>{
+                    if(res.data.code == 20031){
+                        this.dialogFormVisible4Edit=false;
+                        this.$message.success("修改成功");
+                    }else if(res.data.code == 20030){
+                        this.$message.error("修改失敗");
+                    }else{
+                        this.$message.error(res.data.msg);
+                    };
+                    }).finally(()=>{ this.getAll()});
+            },
+            handleDelete(row){
+                this.$confirm("此操作永久刪除當前數據，是否繼續?","提示",{}).then(()=>{
+                    axios.delete("http://localhost/books/"+row.id).then((res)=>{
+                    if(res.data.code == 20021){
+                        this.$message.success("刪除成功");
+                    } else {
+                        this.$message.error("刪除失敗");
+                    }
+                    }).finally(()=>{this.getAll()});
+                }).catch(()=>{
+                    this.$message.info("取消刪除");
+                });
             }
         }
 

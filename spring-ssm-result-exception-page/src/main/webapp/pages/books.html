@@ -128,19 +128,29 @@
             },
             handleCreate() {
                 this.dialogFormVisible=true;
+                this.resetForm();
                 
             },
-            restForm() {
+            resetForm() {
+                this.formData = {};
             },
             handleAdd() {
                 axios.post("http://localhost/books",this.formData).then((res)=>{
-                    this.dialogFormVisible=false;
-                    this.getAll();
-                });
+                    if(res.data.code == 20011){
+                        this.dialogFormVisible=false;
+                        this.$message.success("添加成功");
+                    }else if(res.data.code == 20010){
+                        this.$message.error("添加失敗");
+                    }else{
+                        this.$message.error(res.data.msg);
+                    };
+                    }).finally(()=>{ this.getAll()});
             },
             handleUpdate(row) {
+               
             },
             handleEdit() {
+               
             }
         }
 

@@ -28,6 +28,8 @@ public class ProjectInterceptor implements HandlerInterceptor{
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
         System.out.println("pre");
+        String header = request.getHeader("Content-Type");
+        System.out.println(header);
         return true;
     }
     
